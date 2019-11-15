@@ -27,7 +27,7 @@ I tried to make the commit messages elaborate hence the commit history will thro
 - Start up your local server (XAMPP WAMP etc), or in your terminal run _php -S 127.0.0.1:9000 -t ./_ (still in the project root folder)
 - You can now start testing the following endpoints:
     - *Account creation* [POST] - '127.0.0.1:9000/api/register' with payload {(String)name, (String)email, (String)password, (String)confirmed_password}
-    - *Login* [POST] - '127.0.0.1:9000/api/login' with payload {(String)email, (String)password}
+    - *Login* [POST] - '127.0.0.1:9000/api/login' with payload {(String)email, (String)password} (*Use the token returned as Authorization Bearer when making calls to authenticated endpoints like /user*)
     - *Get User* [GET] - '127.0.0.1:9000/api/user' 
 - You can also use the postman.json collection inside the folder name test, to test the endpoints with postman
 

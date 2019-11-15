@@ -77,16 +77,17 @@ class AuthController extends BaseController{
         
     }
 
-    public function logout(String $token){
+    public static function logout(String $token){
         // Check if user is authenticated
-        if(!$this->isAuth($token)) return $this->jsonResponse(200, 'You have already logged out');
+        $self = (new self);
+        if(!$self->isAuth($token)) return $self->jsonResponse(200, 'You have already logged out');
         
         try{
             $_SESSION[$token] = null;
             unset($_SESSION[$token]);
-            return $this->jsonResponse(200, 'You have successfully logged out');
+            return $self->jsonResponse(200, 'You have successfully logged out');
         }catch(\Exception $e){
-            return $this->jsonResponse(400, $e->getMessage());
+            return $self->jsonResponse(400, $e->getMessage());
         }
     }
 

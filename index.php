@@ -84,13 +84,19 @@ else{
         $token = $matches[1];
         $auth = AuthController::isAuth($token);
         if($auth){
+            $user = new UserController();
+            //Confirm intended route is set
+            if($uri[2] !== 'user' && $uri[2] !== 'logout') exit('Route not defined');
             // confirm specified required method for requested route
             if($uri[2] == 'user' && $requestMethod == 'GET'){
                 // Grant access to route
-                $user = new UserController();
                 $user->getUser($auth['id']);
-            }else{
-                exit('Route not defined or specified route method incorrect (ensure its a GET request)');
+            }
+            elseif($uri[2] == 'logout' && $requestMethod == 'GET'){
+                AuthController::logout($token);
+            }
+            else{
+                exit('Specified route method incorrect (ensure its a GET request)');
             }
         }else{
             exit('Unauthenticated');
