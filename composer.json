@@ -1,0 +1,22 @@
+{
+    "name": "christian/auth",
+    "type": "test",
+    "description": "A basic OOP User Authentication API.",
+    "keywords": [
+        "osueke",
+        "christian",
+        "patricia",
+        "authentication",
+        "oop"
+    ],
+    
+    "require": {
+        "vlucas/phpdotenv": "^2.6"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
