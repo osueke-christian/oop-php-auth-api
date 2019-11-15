@@ -43,6 +43,15 @@ if(array_key_exists('HTTP_AUTHORIZATION', $_SERVER)) $authHeader = $_SERVER['HTT
 elseif(array_key_exists('Authorization', $_SERVER)) $authHeader = $_SERVER['Authorization'];
 else $authHeader = null;
 
+// Declare API routes
+$routes = [
+    'register'=>['method'=>'post', 'controller'=>'AuthController', ''=>'register'],
+    'login'=>['method'=>'post', 'controller'=>'AuthController', ''=>'login'], 
+    'logout'=>['method'=>'get', 'controller'=>'AuthController', ''=>'logout', 'middleware'=>'auth'],
+    'user'=>['method'=>'get', 'controller'=>'UserController', ''=>'getUser', 'middleware'=>'auth'],
+    'user/all'=>['method'=>'get', 'controller'=>'UserController', ''=>'getAllUsers', 'middleware'=>'auth'],
+];
+
 /**
  * If user is accessing the login or register route, then confirm its a post request and act accordingly
  * 
