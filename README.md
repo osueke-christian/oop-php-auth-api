@@ -40,3 +40,4 @@ I tried to make the commit messages elaborate hence the commit history will thro
 - Create a route class for managing all routes
 - Setup proper route middlewares, as well as controller and method guards
 - set email as a unique field in db
+- Perform automated unit and e2e tests
