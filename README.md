@@ -1,6 +1,6 @@
 # About Project
 Here is a practice on setting up an authentication API with vanilla PHP (NO FRAMEWORK), using objected oriented programming in PHP.
-A code challange by PATRICIA.COM.NG done in less than 2days.
+A code challange by [http://patricia.com.ng]PATRICIA.COM.NG done in less than 2days.
 
 # Tools Used
 - Composer
@@ -20,18 +20,20 @@ I tried to make the commit messages elaborate hence the commit history will thro
 
 # Steps to lunch and test the app
 - Create a copy of .env.example and name is .env 
-    (You can run this in terminal while in the project root folder _cp .env.example .env_)
+    (You can run this in terminal while in the project root folder ```sh cp .env.example .env```)
 - Edit the .env file created from step 1 with your server and DB config parameters
-- While in the root directory of the project, run _composer install_ to install the dependencies (Be sure you have composer installed on your system before doing this)
-- Run the User table migration file located in ./app/Database/Migration.php (cd into the path _./app/Database/_ and run _php Migration.php_ in terminal). This will create the necessary table for this test.
-- Start up your local server (XAMPP WAMP etc), or in your terminal run _php -S 127.0.0.1:9000 -t ./_ (still in the project root folder)
+- While in the root directory of the project, run ```sh composer install``` to install the dependencies (Be sure you have composer installed on your system before doing this)
+- Run the User table migration file located in ./app/Database/Migration.php (cd into the path ```sh ./app/Database/ ``` and run ```sh php Migration.php``` in terminal). This will create the necessary table for this test.
+- Start up your local server (XAMPP WAMP etc), or in your terminal run ```sh php -S 127.0.0.1:9000 -t ./ ``` (still in the project root folder)
 - You can now start testing the following endpoints:
-    - *Account creation* [POST] - '127.0.0.1:9000/api/register' with payload {(String)name, (String)email, (String)password, (String)confirmed_password}
-    - *Login* [POST] - '127.0.0.1:9000/api/login' with payload {(String)email, (String)password} (*Use the token returned as Authorization Bearer when making calls to authenticated endpoints like /user*)
-    - *Get User* [GET] - '127.0.0.1:9000/api/user' 
+    - *Account creation* `[POST]` - `127.0.0.1:9000/api/register` with payload {(String)name, (String)email, (String)password, (String)confirmed```password}
+    - *Login* `[POST]` - `127.0.0.1:9000/api/login` with payload {(String)email, (String)password} (*Use the token returned as Authorization Bearer when making calls to authenticated endpoints like /user*)
+    - *Get User* `[GET]` - `127.0.0.1:9000/api/user` 
 - You can also use the postman.json collection inside the folder name test, to test the endpoints with postman
 
-*Note:* _When making POST requests via postman, make sure to set the Body type to raw, then paste the payload in JSON format and set the content type to JSON (application/json)._
+*Note:* 
+> When making POST requests via postman, make sure to set the Body type to raw, 
+> then paste the payload in JSON format and set the content type to JSON (application/json).
 
 # Suggestions for Continious Improvements
 - Use JWT for token generation
