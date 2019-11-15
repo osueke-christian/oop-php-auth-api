@@ -1,6 +1,6 @@
 # About Project
 Here is a practice on setting up an authentication API with vanilla PHP (NO FRAMEWORK), using objected oriented programming in PHP.
-A code challange by [http://patricia.com.ng]PATRICIA.COM.NG done in less than 2days.
+A code challange by [PATRICIA.COM.NG](http://patricia.com.ng) done in less than 2days.
 
 # Tools Used
 - Composer
