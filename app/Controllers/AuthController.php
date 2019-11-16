@@ -11,6 +11,15 @@ class AuthController extends BaseController{
         // middlewares and guards can be implemented here
     }
 
+    /**
+     * Create user
+     * 
+     * @param  [string] name
+     * @param  [string] email
+     * @param  [string] password
+     * @param  [string] confirmed_password
+     * @return jsonResponse
+     */
     public function register(Array $payload) {
         try{
             // Perform input validation
@@ -43,6 +52,14 @@ class AuthController extends BaseController{
         }
     }
 
+
+    /**
+     * Login user
+     * 
+     * @param  [string] email
+     * @param  [string] password
+     * @return jsonResponse
+     */
     public function login(Array $payload){
         try{
             // Perform input validation
@@ -77,6 +94,13 @@ class AuthController extends BaseController{
         
     }
 
+
+    /**
+     * Logout user
+     * 
+     * @param  [string] token
+     * @return jsonResponse
+     */
     public static function logout(String $token){
         // Check if user is authenticated
         $self = (new self);
